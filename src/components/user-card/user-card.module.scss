@@ -1,0 +1,10 @@
+.email {
+  display: block;
+  color: hsl(var(--muted-foreground));
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+}
+
+.link {
+  gap: var(--space-sm);
+}

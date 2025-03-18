@@ -1,0 +1,30 @@
+.description {
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
+}
+
+// Size variants
+.sm {
+  font-size: var(--font-size-xs);
+}
+
+.md {
+  font-size: var(--font-size-sm);
+}
+
+.lg {
+  font-size: var(--font-size-md);
+}
+
+// Color variants
+.default {
+  color: hsl(var(--foreground));
+}
+
+.muted {
+  color: hsl(var(--muted-foreground));
+}
+
+.disableGutter {
+  margin-bottom: 0;
+}

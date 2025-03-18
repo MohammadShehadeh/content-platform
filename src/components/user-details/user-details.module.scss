@@ -1,0 +1,86 @@
+@use '@/styles/shared/breakpoints' as breakpoints;
+
+.header {
+  margin-bottom: var(--space-md);
+  display: flex;
+  gap: var(--space-sm);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+
+  @include breakpoints.respond-above('sm') {
+    flex-direction: row;
+    gap: var(--space-md);
+    align-items: center;
+  }
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+}
+
+.section {
+  margin-bottom: var(--space-lg);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.infoGrid {
+  columns: 2;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: hsl(var(--primary));
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.label {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: var(--font-size-md);
+  color: hsl(var(--foreground));
+  text-decoration: none;
+
+  &:hover {
+    color: hsl(var(--primary));
+    text-decoration: underline;
+  }
+}
+
+.addressLine {
+  margin: 0;
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-size-md);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

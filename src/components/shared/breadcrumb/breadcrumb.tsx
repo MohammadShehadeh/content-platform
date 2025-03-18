@@ -29,7 +29,12 @@ interface BreadcrumbProps extends PropsWithChildren {
   className?: string;
 }
 
-export const Breadcrumb = ({ children, separator = '/', className, ...props }: BreadcrumbProps) => {
+export const Breadcrumb = ({
+  children,
+  separator = '/',
+  className,
+  ...props
+}: BreadcrumbProps) => {
   return (
     <BreadcrumbContext.Provider value={{ separator }}>
       <nav className={cn(styles.breadcrumb, className)} aria-label="Breadcrumb" {...props}>
@@ -45,7 +50,12 @@ interface BreadcrumbItemProps extends PropsWithChildren {
   className?: string;
 }
 
-export const BreadcrumbItem = ({ children, current, className, ...props }: BreadcrumbItemProps) => {
+export const BreadcrumbItem = ({
+  children,
+  current,
+  className,
+  ...props
+}: BreadcrumbItemProps) => {
   const { separator } = useBreadcrumb();
 
   return (
@@ -68,12 +78,20 @@ export const BreadcrumbItem = ({ children, current, className, ...props }: Bread
   );
 };
 
-interface BreadcrumbLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>, PropsWithChildren {
+interface BreadcrumbLinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    PropsWithChildren {
   asChild?: boolean;
   current?: boolean;
 }
 
-export const BreadcrumbLink = ({ children, asChild, current, className, ...props }: BreadcrumbLinkProps) => {
+export const BreadcrumbLink = ({
+  children,
+  asChild,
+  current,
+  className,
+  ...props
+}: BreadcrumbLinkProps) => {
   const { separator } = useBreadcrumb();
   const Comp = asChild ? Slot : 'a';
 
@@ -102,7 +120,11 @@ interface BreadcrumbSeparatorProps {
   className?: string;
 }
 
-export const BreadcrumbSeparator = ({ children, className, ...props }: BreadcrumbSeparatorProps) => {
+export const BreadcrumbSeparator = ({
+  children,
+  className,
+  ...props
+}: BreadcrumbSeparatorProps) => {
   const { separator } = React.useContext(BreadcrumbContext);
 
   return (

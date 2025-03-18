@@ -1,0 +1,22 @@
+.title {
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+  text-transform: capitalize;
+}
+
+.sm {
+  font-size: var(--font-size-sm);
+}
+
+.md {
+  font-size: var(--font-size-md);
+}
+
+.lg {
+  font-size: var(--font-size-lg);
+}
+
+.xl {
+  font-size: calc(var(--font-size-lg) * 1.5);
+}

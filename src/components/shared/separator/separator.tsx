@@ -7,9 +7,18 @@ interface SeparatorProps {
   className?: string;
 }
 
-export const Separator = ({ orientation = 'horizontal', className, ...props }: SeparatorProps) => {
+export const Separator = ({
+  orientation = 'horizontal',
+  className,
+  ...props
+}: SeparatorProps) => {
   return (
-    <div className={cn(styles.wrapper, className)} role="separator" aria-orientation={orientation} {...props}>
+    <div
+      className={cn(styles.wrapper, className)}
+      role="separator"
+      aria-orientation={orientation}
+      {...props}
+    >
       <div
         className={cn(styles.separator, {
           [styles.vertical]: orientation === 'vertical',
