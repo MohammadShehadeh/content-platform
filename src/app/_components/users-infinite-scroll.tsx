@@ -1,9 +1,8 @@
 'use client';
 
-import { useRef, useState, useCallback } from 'react';
-
+import { Skeleton } from '@/components/shared/skeleton';
 import { UserCard } from '@/components/user-card';
-import { useInfiniteScroll } from '@/hooks/use-infinite-scroll';
+import { useInfiniteData } from '@/hooks/use-infinite-data';
 import { getUsers } from '@/services/users';
 import type { User } from '@/services/users';
 
@@ -16,30 +15,18 @@ export const UsersInfiniteScroll = ({
   offset: number;
   limit: number;
 }) => {
-  const offsetRef = useRef(offset);
-  const [users, setUsers] = useState<User[]>(initialUsers ?? []);
-  const [hasMore, setHasMore] = useState(true);
-
-  const loadMoreUsers = useCallback(async () => {
-    if (!hasMore) return;
-
-    const { data: newUsers, error } = await getUsers({
-      offset: offsetRef.current + limit,
-      limit,
-    });
-
-    if (newUsers && !error) {
-      if (newUsers.length === 0) {
-        setHasMore(false);
-        return;
-      }
-
-      setUsers((prevUsers) => [...prevUsers, ...newUsers]);
-      offsetRef.current += limit;
-    }
-  }, [hasMore, limit]);
-
-  const lastElementRef = useInfiniteScroll<HTMLDivElement>(loadMoreUsers);
+  const {
+    data: users,
+    hasMore,
+    lastElementRef,
+    isLoading,
+  } = useInfiniteData<User, unknown>({
+    initialData: initialUsers,
+    initialOffset: offset,
+    limit,
+    fetcher: (_, options) => getUsers(options),
+    fetcherParams: {},
+  });
 
   return (
     <>
@@ -48,6 +35,8 @@ export const UsersInfiniteScroll = ({
       ))}
 
       {hasMore && <div ref={lastElementRef} />}
+
+      {isLoading && <Skeleton style={{ width: '100%', height: '100px' }} />}
     </>
   );
 };

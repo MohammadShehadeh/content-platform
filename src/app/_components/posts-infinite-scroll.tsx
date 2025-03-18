@@ -1,9 +1,8 @@
 'use client';
 
-import { useRef, useState, useCallback } from 'react';
-
 import { PostCard } from '@/components/post-card';
-import { useInfiniteScroll } from '@/hooks/use-infinite-scroll';
+import { Skeleton } from '@/components/shared/skeleton';
+import { useInfiniteData } from '@/hooks/use-infinite-data';
 import type { Post } from '@/services/posts';
 import { getPostsByUserId } from '@/services/posts';
 
@@ -18,30 +17,18 @@ export const PostsInfiniteScroll = ({
   limit: number;
   userId: number;
 }) => {
-  const offsetRef = useRef(offset);
-  const [posts, setPosts] = useState<Post[]>(initialPosts ?? []);
-  const [hasMore, setHasMore] = useState(true);
-
-  const loadMorePosts = useCallback(async () => {
-    if (!hasMore) return;
-
-    const { data: newPosts, error } = await getPostsByUserId(userId, {
-      offset: offsetRef.current + limit,
-      limit,
-    });
-
-    if (newPosts && !error) {
-      if (newPosts.length === 0) {
-        setHasMore(false);
-        return;
-      }
-
-      setPosts((prevPosts) => [...prevPosts, ...newPosts]);
-      offsetRef.current += limit;
-    }
-  }, [hasMore, limit]);
-
-  const lastElementRef = useInfiniteScroll<HTMLDivElement>(loadMorePosts);
+  const {
+    data: posts,
+    hasMore,
+    lastElementRef,
+    isLoading,
+  } = useInfiniteData<Post, number>({
+    initialData: initialPosts,
+    initialOffset: offset,
+    limit,
+    fetcher: getPostsByUserId,
+    fetcherParams: userId,
+  });
 
   return (
     <>
@@ -50,6 +37,8 @@ export const PostsInfiniteScroll = ({
       ))}
 
       {hasMore && <div ref={lastElementRef} />}
+
+      {isLoading && <Skeleton style={{ width: '100%', height: '100px' }} />}
     </>
   );
 };
