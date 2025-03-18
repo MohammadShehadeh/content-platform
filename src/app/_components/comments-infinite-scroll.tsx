@@ -1,10 +1,9 @@
 'use client';
 
-import { useRef, useState, useCallback } from 'react';
-
 import { Comments } from '@/components/comments';
+import { Skeleton } from '@/components/shared/skeleton';
 import { Title } from '@/components/title';
-import { useInfiniteScroll } from '@/hooks/use-infinite-scroll';
+import { useInfiniteData } from '@/hooks/use-infinite-data';
 import type { Comment } from '@/services/comments';
 import { getCommentsByPostId } from '@/services/comments';
 
@@ -19,30 +18,18 @@ export const CommentsInfiniteScroll = ({
   limit: number;
   postId: number;
 }) => {
-  const offsetRef = useRef(offset);
-  const [comments, setComments] = useState<Comment[]>(initialComments ?? []);
-  const [hasMore, setHasMore] = useState(true);
-
-  const loadMoreComments = useCallback(async () => {
-    if (!hasMore) return;
-
-    const { data: newComments, error } = await getCommentsByPostId(postId, {
-      offset: offsetRef.current + limit,
-      limit,
-    });
-
-    if (newComments && !error) {
-      if (newComments.length === 0) {
-        setHasMore(false);
-        return;
-      }
-
-      setComments((prevComments) => [...prevComments, ...newComments]);
-      offsetRef.current += limit;
-    }
-  }, [hasMore, limit]);
-
-  const lastElementRef = useInfiniteScroll<HTMLDivElement>(loadMoreComments);
+  const {
+    data: comments,
+    hasMore,
+    lastElementRef,
+    isLoading,
+  } = useInfiniteData<Comment, number>({
+    initialData: initialComments,
+    initialOffset: offset,
+    limit,
+    fetcher: getCommentsByPostId,
+    fetcherParams: postId,
+  });
 
   return (
     <>
@@ -55,6 +42,8 @@ export const CommentsInfiniteScroll = ({
       ))}
 
       {hasMore && <div ref={lastElementRef} />}
+
+      {isLoading && <Skeleton style={{ width: '100%', height: '100px' }} />}
     </>
   );
 };

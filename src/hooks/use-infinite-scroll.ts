@@ -1,25 +1,25 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 
 export const useInfiniteScroll = <T extends HTMLElement>(callback: () => void) => {
   const observer = useRef<IntersectionObserver | null>(null);
-  const isLoading = useRef(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const lastElementRef = useCallback(
     (node: T | null) => {
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !isLoading.current) {
-          isLoading.current = true;
+        if (entries[0].isIntersecting && !isLoading) {
+          setIsLoading(true);
 
           Promise.resolve(callback()).finally(() => {
-            isLoading.current = false;
+            setIsLoading(false);
           });
         }
       });
 
       if (node) observer.current.observe(node);
     },
-    [callback]
+    [callback, isLoading]
   );
 
   useEffect(() => {
@@ -28,5 +28,5 @@ export const useInfiniteScroll = <T extends HTMLElement>(callback: () => void) =
     };
   }, []);
 
-  return lastElementRef;
+  return { lastElementRef, isLoading };
 };
