@@ -1,7 +1,17 @@
-export default function Home() {
+import Link from 'next/link';
+
+import { Breadcrumb, BreadcrumbItem } from '@/components/shared/breadcrumb';
+
+const Home = () => {
   return (
     <div>
-      <h1>Hello World</h1>
+      <Breadcrumb>
+        <BreadcrumbItem current>
+          <Link href="/">Home</Link>
+        </BreadcrumbItem>
+      </Breadcrumb>
     </div>
   );
-}
+};
+
+export default Home;

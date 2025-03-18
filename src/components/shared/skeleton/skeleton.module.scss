@@ -1,0 +1,27 @@
+.skeleton {
+  background-color: hsl(var(--muted));
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    translate: -100% 0;
+    background-image: linear-gradient(
+      90deg,
+      hsl(var(--muted-foreground) / 0) 0,
+      hsl(var(--muted-foreground) / 0.1) 20%,
+      hsl(var(--muted-foreground) / 0.1) 80%,
+      hsl(var(--muted-foreground) / 0)
+    );
+    animation: shimmer 2s infinite;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    translate: 100% 0;
+  }
+}

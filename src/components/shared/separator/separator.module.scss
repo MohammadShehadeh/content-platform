@@ -1,0 +1,21 @@
+.separator {
+  background-color: hsl(var(--border));
+}
+
+.horizontal {
+  height: 1px;
+  width: 100%;
+  margin-block: var(--space-sm);
+}
+
+.vertical {
+  height: 100%;
+  margin-inline: var(--space-sm);
+  width: 1px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}

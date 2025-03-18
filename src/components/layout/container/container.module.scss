@@ -1,0 +1,12 @@
+@use '@/styles/shared/breakpoints' as breakpoints;
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  padding-inline: var(--space-md);
+  margin-inline: auto;
+
+  @include breakpoints.respond-above('md') {
+    padding-inline: var(--space-lg);
+  }
+}
