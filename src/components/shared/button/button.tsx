@@ -12,6 +12,7 @@ const buttonVariants = cva(styles.button, {
       secondary: styles.secondary,
       outline: styles.outline,
       ghost: styles.ghost,
+      link: styles.link,
     },
     size: {
       sm: styles.sm,
@@ -32,7 +33,14 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
-export const Button = ({ variant = 'primary', size = 'md', children, className, asChild, ...props }: ButtonProps) => {
+export const Button = ({
+  variant = 'primary',
+  size = 'md',
+  children,
+  className,
+  asChild,
+  ...props
+}: ButtonProps) => {
   const Comp = asChild ? Slot : 'button';
 
   return (

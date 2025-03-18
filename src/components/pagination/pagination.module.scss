@@ -1,0 +1,31 @@
+.pagination {
+  display: flex;
+  gap: var(--space-md);
+  margin-block: var(--space-md);
+  justify-content: space-between;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.previous,
+.next {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}

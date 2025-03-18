@@ -19,7 +19,11 @@ export default tseslint.config(
     },
   },
   {
-    extends: [react.configs.flat['jsx-runtime'], ...tseslint.configs.recommended, importX.flatConfigs.typescript],
+    extends: [
+      react.configs.flat['jsx-runtime'],
+      ...tseslint.configs.recommended,
+      importX.flatConfigs.typescript,
+    ],
     files: ['**/*.{js,mjs,ts,tsx}'],
     rules: {
       '@typescript-eslint/consistent-type-imports': 'error',
@@ -41,7 +45,14 @@ export default tseslint.config(
       'import-x/order': [
         'error',
         {
-          groups: ['builtin', 'external', 'internal', ['sibling', 'parent'], 'index', 'unknown'],
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            ['sibling', 'parent'],
+            'index',
+            'unknown',
+          ],
           'newlines-between': 'always',
           alphabetize: {
             order: 'asc',
@@ -49,7 +60,10 @@ export default tseslint.config(
           },
         },
       ],
-      'no-relative-import-paths/no-relative-import-paths': ['warn', { allowSameFolder: true, prefix: '@' }],
+      'no-relative-import-paths/no-relative-import-paths': [
+        'warn',
+        { allowSameFolder: true, prefix: '@' },
+      ],
     },
   }
 );

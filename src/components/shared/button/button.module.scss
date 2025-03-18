@@ -54,17 +54,38 @@
   }
 }
 
-.sm {
+.link {
+  background-color: transparent;
+  color: hsl(var(--primary));
+  border: 1px solid transparent;
+  padding: 0;
+
+  &:hover:not(:disabled) {
+    text-decoration: underline;
+    text-underline-offset: var(--space-xs);
+  }
+}
+
+/*
+ * Using :where() selector to lower the specificity of these size classes.
+ * This ensures that variant styles (primary, secondary, etc.) can easily
+ * override these base size styles without requiring !important flags or
+ * complex specificity calculations.
+ *
+ * The :where() pseudo-class has zero specificity, making these size classes
+ * easy to override when combined with variant classes.
+*/
+:where(.sm) {
   font-size: var(--font-size-sm);
   padding: var(--space-xs) var(--space-sm);
 }
 
-.md {
+:where(.md) {
   font-size: var(--font-size-md);
   padding: var(--space-sm) var(--space-md);
 }
 
-.lg {
+:where(.lg) {
   font-size: var(--font-size-lg);
   padding: var(--space-sm) var(--space-lg);
 }

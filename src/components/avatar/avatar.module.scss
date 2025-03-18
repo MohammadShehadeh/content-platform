@@ -1,0 +1,9 @@
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  border-radius: 50%;
+  background-color: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+}
