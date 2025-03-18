@@ -1,3 +1,45 @@
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --primary: 142.1 76.2% 36.3%;
+  --primary-foreground: 355.7 100% 97.3%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 142.1 76.2% 36.3%;
+
+  // spacing
+  --radius: 0.25rem; // 4px
+  --space-xs: 0.25rem; // 4px
+  --space-sm: 0.5rem; // 8px
+  --space-md: 1rem; // 16px
+  --space-lg: 2rem; // 32px
+  --space-xl: 4rem; // 64px
+
+  // layout
+  --container-width: 1224px;
+
+  // font sizes
+  --font-size-xs: 0.75rem; // 12px
+  --font-size-sm: 0.875rem; // 14px
+  --font-size-md: 1rem; // 16px
+  --font-size-lg: 1.125rem; // 18px
+
+  // font weights
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -24,4 +66,11 @@ input {
   border: none;
   background: none;
   cursor: text;
+}
+
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+
+import { Container } from '@/components/layout/container';
 import { geist } from '~/next.fonts';
 
 import '@/styles/global.scss';
@@ -16,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geist.className} antialiased`}>
-        <main>{children}</main>
+        <Container asChild>
+          <main>{children}</main>
+        </Container>
       </body>
     </html>
   );
