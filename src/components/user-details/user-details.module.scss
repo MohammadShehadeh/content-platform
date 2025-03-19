@@ -35,7 +35,11 @@
 }
 
 .infoGrid {
-  columns: 2;
+  columns: 1;
+
+  @include breakpoints.respond-above('sm') {
+    columns: 2;
+  }
 }
 
 .infoItem {

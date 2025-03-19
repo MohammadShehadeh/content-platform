@@ -8,7 +8,7 @@
   right: calc(var(--space-md) * -2);
   opacity: 1;
 
-  @include breakpoints.respond-below('md') {
+  @include breakpoints.respond-below('lg') {
     display: none;
   }
 }
