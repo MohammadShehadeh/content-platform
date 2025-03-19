@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container matches snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    Hello
+  </div>
+</div>
+`;
+
+exports[`Container should match snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    Hello
+  </div>
+</div>
+`;

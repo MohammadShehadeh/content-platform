@@ -5,6 +5,7 @@
   max-width: var(--container-width);
   padding-inline: var(--space-md);
   margin-inline: auto;
+  position: relative;
 
   @include breakpoints.respond-above('md') {
     padding-inline: var(--space-lg);

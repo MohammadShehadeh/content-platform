@@ -1,0 +1,21 @@
+@use '@/styles/shared/breakpoints' as breakpoints;
+
+.scrollIndicator {
+  animation: scroll-down 2s linear;
+  animation-timeline: scroll();
+  position: absolute;
+  top: calc(var(--space-xl) * 2);
+  right: calc(var(--space-md) * -2);
+  opacity: 1;
+
+  @include breakpoints.respond-below('md') {
+    display: none;
+  }
+}
+
+@keyframes scroll-down {
+  100% {
+    opacity: 0;
+    top: 100%;
+  }
+}

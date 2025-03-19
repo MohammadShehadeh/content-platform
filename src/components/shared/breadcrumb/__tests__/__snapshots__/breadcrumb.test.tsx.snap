@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb matches snapshot 1`] = `
+<div>
+  <nav
+    aria-label="Breadcrumb"
+    class="breadcrumb"
+  >
+    <ol
+      class="breadcrumbList"
+    >
+      <li
+        class="listItem"
+      >
+        <a
+          class="item"
+          href="/"
+        >
+          Home
+        </a>
+        <span
+          class="separator"
+        >
+          /
+        </span>
+      </li>
+      <li
+        class="listItem"
+      >
+        <span
+          aria-current="page"
+          class="item current"
+        >
+          Posts
+        </span>
+      </li>
+    </ol>
+  </nav>
+</div>
+`;
+
+exports[`Breadcrumb should match snapshot 1`] = `
+<div>
+  <nav
+    aria-label="Breadcrumb"
+    class="breadcrumb"
+  >
+    <ol
+      class="breadcrumbList"
+    >
+      <li
+        class="listItem"
+      >
+        <a
+          class="item"
+          href="/"
+        >
+          Home
+        </a>
+        <span
+          class="separator"
+        >
+          /
+        </span>
+      </li>
+      <li
+        class="listItem"
+      >
+        <span
+          aria-current="page"
+          class="item current"
+        >
+          Posts
+        </span>
+      </li>
+    </ol>
+  </nav>
+</div>
+`;

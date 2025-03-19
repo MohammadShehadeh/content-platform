@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
-import { Container } from '@/components/layout/container';
+import { Container } from '@/components/container';
+import { ScrollIndicator } from '@/components/scroll-indicator';
 import { geist } from '~/next.fonts';
 
 import '@/styles/global.scss';
@@ -19,7 +20,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geist.className} antialiased`}>
         <Container asChild>
-          <main>{children}</main>
+          <main>
+            {children}
+
+            <ScrollIndicator />
+          </main>
         </Container>
       </body>
     </html>

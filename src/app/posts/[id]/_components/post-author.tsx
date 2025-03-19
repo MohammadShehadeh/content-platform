@@ -15,7 +15,7 @@ export const PostAuthorSkeleton = () => {
   return (
     <Description color="muted" size="lg" className={styles.skeleton} asChild>
       <div>
-        By: <Skeleton style={{ width: '100px', height: '20px' }} />
+        By: <Skeleton style={{ width: '100px', height: '26px' }} />
       </div>
     </Description>
   );

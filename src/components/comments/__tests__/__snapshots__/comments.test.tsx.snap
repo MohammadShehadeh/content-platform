@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comments matches snapshot 1`] = `
+<div>
+  <div
+    class="card comment"
+  >
+    <h3
+      class="title lg"
+    >
+      John Doe
+    </h3>
+    <p
+      class="description md muted"
+    >
+      john.doe@example.com
+    </p>
+    <p
+      class="description lg default"
+    >
+      This is a comment
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Comments should match snapshot 1`] = `
+<div>
+  <div
+    class="card comment"
+  >
+    <h3
+      class="title lg"
+    >
+      John Doe
+    </h3>
+    <p
+      class="description md muted"
+    >
+      john.doe@example.com
+    </p>
+    <p
+      class="description lg default"
+    >
+      This is a comment
+    </p>
+  </div>
+</div>
+`;

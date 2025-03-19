@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserCard matches snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <div
+      class="header"
+    >
+      <h3
+        class="title"
+      >
+        John Doe
+        <span
+          class="email"
+        >
+          john@example.com
+        </span>
+      </h3>
+    </div>
+    <div
+      class="content"
+    >
+      <a
+        class="button link sm link"
+        href="/users/1"
+      >
+        View User
+        <svg
+          class="lucide lucide-arrow-right"
+          fill="none"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 12h14"
+          />
+          <path
+            d="m12 5 7 7-7 7"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`UserCard should match snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <div
+      class="header"
+    >
+      <h3
+        class="title"
+      >
+        John Doe
+        <span
+          class="email"
+        >
+          john@example.com
+        </span>
+      </h3>
+    </div>
+    <div
+      class="content"
+    >
+      <a
+        class="button link sm link"
+        href="/users/1"
+      >
+        View User
+        <svg
+          class="lucide lucide-arrow-right"
+          fill="none"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 12h14"
+          />
+          <path
+            d="m12 5 7 7-7 7"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+`;
