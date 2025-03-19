@@ -11,7 +11,8 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",

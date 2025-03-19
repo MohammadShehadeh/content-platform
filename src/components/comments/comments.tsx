@@ -5,7 +5,7 @@ import type { Comment } from '@/services/comments';
 
 import styles from './comments.module.scss';
 
-type CommentsProps = Comment;
+type CommentsProps = Pick<Comment, 'name' | 'email' | 'body'>;
 
 export const Comments = ({ name, email, body }: CommentsProps) => {
   return (

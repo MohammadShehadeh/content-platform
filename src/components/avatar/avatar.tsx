@@ -12,7 +12,7 @@ interface AvatarProps {
 
 export const Avatar = ({ size = 32, className }: AvatarProps) => {
   return (
-    <div className={cn(styles.avatar, className)}>
+    <div className={cn(styles.avatar, className)} data-testid="avatar">
       <UserIcon size={size} />
     </div>
   );

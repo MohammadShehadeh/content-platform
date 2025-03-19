@@ -7,5 +7,5 @@ import styles from './skeleton.module.scss';
 type SkeletonProps = React.HTMLAttributes<HTMLDivElement>;
 
 export const Skeleton = ({ className, ...props }: SkeletonProps) => {
-  return <div className={cn(styles.skeleton, className)} {...props} />;
+  return <div role="skeleton" className={cn(styles.skeleton, className)} {...props} />;
 };

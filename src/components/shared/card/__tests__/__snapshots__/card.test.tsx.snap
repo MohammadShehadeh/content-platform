@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card matches snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    Hello
+  </div>
+</div>
+`;
+
+exports[`Card renders a complete card with all subcomponents 1`] = `
+<div>
+  <div
+    class="card test-card"
+  >
+    <div
+      class="header"
+    >
+      <h3
+        class="title"
+      >
+        Card Title
+      </h3>
+      <p
+        class="description"
+      >
+        This is a card description
+      </p>
+    </div>
+    <div
+      class="content"
+    >
+      <p>
+        This is the main content of the card
+      </p>
+    </div>
+    <div
+      class="footer"
+    >
+      <button>
+        Action Button
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card should match snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    Hello
+  </div>
+</div>
+`;
+
+exports[`Card should render a complete card with all subcomponents 1`] = `
+<div>
+  <div
+    class="card test-card"
+  >
+    <div
+      class="header"
+    >
+      <h3
+        class="title"
+      >
+        Card Title
+      </h3>
+      <p
+        class="description"
+      >
+        This is a card description
+      </p>
+    </div>
+    <div
+      class="content"
+    >
+      <p>
+        This is the main content of the card
+      </p>
+    </div>
+    <div
+      class="footer"
+    >
+      <button>
+        Action Button
+      </button>
+    </div>
+  </div>
+</div>
+`;
